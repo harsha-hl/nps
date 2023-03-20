@@ -39,7 +39,7 @@ Negative weight cycle present in topology
 		flag = false;
 		for(i=1;i<=n;i++){
 			for(j=1;j<=n;j++){
-				if(i != j){
+				//if(i != j){
 					for(k=1;k<=n;k++){
 						if(cost[i][k] != INT_MAX){
 							if(dist[i][k] != INT_MAX && dist[k][j] != INT_MAX && dist[i][j] > dist[i][k] + dist[k][j]){
@@ -50,10 +50,11 @@ Negative weight cycle present in topology
 							}
 						}
 					}
-				} 
+				 
 			}
 		}
 	}
+	printf("%d\n",flag);
 	for(i=1;i<=n;i++){
 		printf( "\nThe routing table for %d is :\nDest\tDist\tNext\n", i);
 		for(j=1;j<=n;j++) printf("%d\t%d\t%d\n",j,dist[i][j],nexthop[i][j]);
