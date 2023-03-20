@@ -74,4 +74,6 @@ int main(){
 			else close(connfd);		
 		}
 	}
+	close(sockfd);
+	return 0;
 }

@@ -33,7 +33,7 @@ int main(){
 	listen(sockfd, 5);
 	len = sizeof(cli);
 
-		connfd = accept(sockfd, (struct sockaddr *)&cli, &len);
+	connfd = accept(sockfd, (struct sockaddr *)&cli, &len);
 	func(connfd);
 
 	close(sockfd);

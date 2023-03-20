@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-unsigned fields[10];
+unsigned short fields[10];
 
 unsigned short checksum(){
     int i;

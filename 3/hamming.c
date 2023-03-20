@@ -1,8 +1,8 @@
 #include<stdio.h>
  
 void main() {
-    int data[10];
-    int dataatrec[10],c,c1,c2,c3,i;
+    int data[7];
+    int dataatrec[7],c,c1,c2,c3,i;
  
     printf("Enter 4 bits of data one by one\n");
     scanf("%d",&data[0]);

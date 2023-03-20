@@ -11,20 +11,11 @@ void func(int connfd1, int connfd2){
 	int n;
 	char buff[1000];
 	while(1){
-		if((n = read(connfd1, buff, sizeof(buff))) > 0){
-		write(connfd2, buff, n);
-		n = read(connfd2, buff, sizeof(buff));
-		write(connfd1, buff, n);
-	}
-	else{
-		n = read(connfd2, buff, sizeof(buff));
-		write(connfd1, buff, n);
 		n = read(connfd1, buff, sizeof(buff));
 		write(connfd2, buff, n);
+		n = read(connfd2, buff, sizeof(buff));
+		write(connfd1, buff, n);
 	}
-
-	}
-
 }
 
 int main(){

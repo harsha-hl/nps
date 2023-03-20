@@ -16,15 +16,15 @@ int main(){
 	
 	u_int yes = 1;
 	
-	if(setsockopt(sockfd,SOL_SOCKET,SO_REUSEADDR,&yes,sizeof(yes))<0){
-		perror("Reuse error");
-		exit(0);
-	}
-	
 	serv.sin_family=AF_INET;
 	serv.sin_addr.s_addr=htonl(INADDR_ANY); 
 	serv.sin_port=htons(12345);
 	
+	if(setsockopt(sockfd,SOL_SOCKET,SO_REUSEADDR,&yes,sizeof(yes))<0){
+		perror("Reuse error");
+		exit(0);
+	}
+
 	if(bind(sockfd,(struct sockaddr*)&serv,sizeof(serv))!=0){
 		printf("Bind Error");
 		exit(0);
